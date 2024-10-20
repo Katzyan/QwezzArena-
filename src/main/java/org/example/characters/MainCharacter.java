@@ -140,8 +140,7 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         System.out.println("INVENTORY: ");
         for(int i = 0; i < inventory.length; i++){
             if(inventory[i] != null ){
-                System.out.println("Slot " + (i+1) + ": " + inventory[i].getName()+ " - " + inventory[i].getDescription() +
-                        "\n-----------------------");
+                System.out.println("Slot " + (i+1) + ": " + inventory[i].getName()+ " - " + inventory[i].getDescription());
             } else {
                 System.out.println("Slot " + (i+1) + ": Empty\n-----------------------");
             }
@@ -151,53 +150,46 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     public void displayEquipped(){
         System.out.println("EQUIPPED ITEMS:");
         if(equipped[0] != null){
-            System.out.println("Head Slot: " + equipped[0].getName() + " - " + equipped[0].getDescription() +
-                     "\n-----------------------");
+            System.out.println("Head Slot: " + equipped[0].getName() + " - " + equipped[0].getDescription());
 
         } else {
             System.out.println("Head Slot: Empty\n-----------------------");
         }
 
         if(equipped[1] != null){
-            System.out.println("Chest Slot: " + equipped[1].getName() + " - " + equipped[1].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Chest Slot: " + equipped[1].getName() + " - " + equipped[1].getDescription());
         } else {
             System.out.println("Chest Slot: Empty \n-----------------------");
         }
 
         if(equipped[2] != null){
-            System.out.println("Legs Slot: " + equipped[2].getName() + " - " + equipped[2].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Legs Slot: " + equipped[2].getName() + " - " + equipped[2].getDescription());
         } else {
             System.out.println("Legs Slot: Empty\n-----------------------");
         }
 
         if(equipped[3] != null){
-            System.out.println("Cloak Slot: " + equipped[3].getName() + " - " + equipped[3].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Cloak Slot: " + equipped[3].getName() + " - " + equipped[3].getDescription());
 
         } else {
             System.out.println("Cloak Slot: Empty\n-----------------------");
         }
 
         if(equipped[4] != null){
-            System.out.println("Ring Slot: " + equipped[4].getName()  + " - " + equipped[4].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Ring Slot: " + equipped[4].getName()  + " - " + equipped[4].getDescription());
         } else {
             System.out.println("Ring Slot: Empty\n-----------------------");
         }
 
         if(equipped[5] != null){
-            System.out.println("Main Hand Slot: " + equipped[5].getName()  + " - " + equipped[4].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Main Hand Slot: " + equipped[5].getName()  + " - " + equipped[5].getDescription());
 
         } else {
             System.out.println("Main Hand Slot: Empty\n-----------------------");
         }
 
         if(equipped[6] != null){
-            System.out.println("Off Hand Slot: " + equipped[5].getName() + " - " + equipped[4].getDescription() +
-                    "\n-----------------------");
+            System.out.println("Off Hand Slot: " + equipped[6].getName() + " - " + equipped[6].getDescription());
         } else {
             System.out.println("Off Hand Slot: Empty\n-----------------------");
         }

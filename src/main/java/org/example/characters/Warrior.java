@@ -22,9 +22,15 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
         super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
        Items noveiceChestpiece = new Items("Novice Chestpiece", "Novice chestpiece don`t do nothing", 0, 0, 0, 20, ArmorType.PLATE, SlotType.CHEST);
        Items noviceCape = new Items("Novice Cape","Novice cape is doesn`t do anythig.", 0, 0, 0, 20, ArmorType.CLOAK, SlotType.CLOAK);
+       Items noviceLeggings = new Items("Novice Leggings", "Novice leggings don`t do shit", 0, 0, 0, 20, ArmorType.PLATE, SlotType.LEGS);
+       Items woodenSword = new Items("Wooden Sword", "You can bonk people", 0, 0, 0, 30, ArmorType.WEAPON, SlotType.MAINHAND);
+
 
         equipItem(noviceCape);
         equipItem(noveiceChestpiece);
+        equipItem(noviceLeggings);
+        equipItem(woodenSword);
+
 
     }
 
@@ -84,7 +90,7 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
                     if(isEquippedSlotEmpty(5)){
                         setEquipped(5, item);
                         break;
-                    };
+                    }
                     break;
                 case SlotType.OFFHAND:
                     if(isEquippedSlotEmpty(6)){
@@ -98,6 +104,7 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
         }else {
             System.out.println("Warriors should wear plate");
         }
+        refreshChar();
     }
 
 
