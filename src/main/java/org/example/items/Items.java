@@ -4,10 +4,28 @@ public class Items {
     private String name;
     private String description;
     private int hpModifier;
+    private int damageModifier;
     private int critModifier;
+    private int buyValue;
+    private int sellValue;
+    private ArmorType armorType;
+
 
     // 0 for Head, 1 for Chest, 2 for Legs, 3 for Cloak, 4 for Ring, 5 for Main Hand, 6 for OffHand
     private int slotSpace;
+
+    public Items(String name, int slotSpace, String description, int hpModifier, int damageModifier, int critModifier, int buyValue, ArmorType armorType){
+        setName(name);
+        setSlotSpace(slotSpace);
+        setDescription(description);
+        setHpModifier(hpModifier);
+        setDamageModifier(damageModifier);
+        setCritModifier(critModifier);
+        setBuyValue(buyValue);
+        setSellValue();
+        setArmorType(armorType);
+
+    }
 
 
     public String getName() {
@@ -15,7 +33,9 @@ public class Items {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name != null && !name.isEmpty()) {
+            this.name = name;
+        }
     }
 
     public String getDescription() {
@@ -23,7 +43,9 @@ public class Items {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        if(description != null && !description.isEmpty()) {
+            this.description = description;
+        }
     }
 
     public int getCritModifier() {
@@ -39,7 +61,9 @@ public class Items {
     }
 
     public void setSlotSpace(int slotSpace) {
-        this.slotSpace = slotSpace;
+        if(slotSpace > 0 && slotSpace < 7) {
+            this.slotSpace = slotSpace;
+        }
     }
 
     public int getHpModifier() {
@@ -48,5 +72,39 @@ public class Items {
 
     public void setHpModifier(int hpModifier) {
         this.hpModifier = hpModifier;
+    }
+
+    public int getBuyValue() {
+        return buyValue;
+    }
+
+    public void setBuyValue(int buyValue) {
+
+        this.buyValue = Math.abs(buyValue);
+    }
+
+    public int getSellValue() {
+        return sellValue;
+    }
+
+    public void setSellValue( ) {
+        this.sellValue = getBuyValue() / 2;
+    }
+
+    public ArmorType getArmorType() {
+        return armorType;
+    }
+
+    public void setArmorType(ArmorType armorType) {
+            this.armorType = armorType;
+
+    }
+
+    public int getDamageModifier() {
+        return damageModifier;
+    }
+
+    public void setDamageModifier(int damageModifier) {
+        this.damageModifier = damageModifier;
     }
 }
