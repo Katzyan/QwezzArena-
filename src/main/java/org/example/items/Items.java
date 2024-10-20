@@ -6,7 +6,7 @@ public class Items {
     private int hpModifier;
     private int critModifier;
 
-    // 0 for Head, 1 for Chest, 2 for Legs, 3 for Cloak, 4 for Ring
+    // 0 for Head, 1 for Chest, 2 for Legs, 3 for Cloak, 4 for Ring, 5 for Main Hand, 6 for OffHand
     private int slotSpace;
 
 

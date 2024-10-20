@@ -12,8 +12,8 @@ public abstract class MainCharacter {
     private int crit;
     private int regen;
 
-    private Items[] inventory = new Items[5];
-    private Items[] equipped = new Items [5];
+    private Items[] inventory = new Items[7];
+    private Items[] equipped = new Items [7];
 
 
 
@@ -140,6 +140,20 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
             System.out.println(equipped[4].getDescription());
         } else {
             System.out.println("Ring Slot: Empty");
+        }
+
+        if(equipped[5] != null){
+            System.out.println("Main Hand Slot: " + equipped[5].getName());
+            System.out.println(equipped[4].getDescription());
+        } else {
+            System.out.println("Main Hand Slot: Empty");
+        }
+
+        if(equipped[6] != null){
+            System.out.println("Off Hand Slot: " + equipped[5].getName());
+            System.out.println(equipped[4].getDescription());
+        } else {
+            System.out.println("Off Hand Slot: Empty");
         }
 
     }
