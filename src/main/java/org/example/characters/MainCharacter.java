@@ -27,6 +27,8 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     setRegen(regen);
 }
 
+
+    //Setters amd Getters
     public String getName() {
         return name;
     }
@@ -94,6 +96,7 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     }
 
 
+    //Display
     public void displayInventory(){
         System.out.println("Inventory: ");
         for(int i = 0; i < inventory.length; i++){
@@ -168,6 +171,17 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
         displayEquipped();
         System.out.println("-------------------");
         displayInventory();
+    }
+
+
+    //Functionality
+
+    public void levelUp(int levels){
+    this.level = this.level + levels;
+    }
+
+    public void refreshChar(){
+
     }
 
 }
