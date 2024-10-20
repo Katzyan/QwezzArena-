@@ -181,7 +181,7 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         System.out.println("Name: " + getName());
         System.out.println("Level: " + getLevel()  + " " + getClassType());
         System.out.println("HP: " + getCurrentHP() + "/" + getMaxHP());
-        System.out.println("Base Damage " + getBaseDamage());
+        System.out.println("Base Damage: " + getBaseDamage());
         System.out.println("Crit chance: " + getCrit() + "%");
         System.out.println("-------------------");
         displayEquipped();
@@ -194,7 +194,9 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
 
     public void levelUp(int levels){
     this.level = this.level + levels;
+        System.out.println("D I N G ! " + getName() + " has leveld up!!!!");
     refreshChar();
+
     }
 
     public void refreshChar(){
