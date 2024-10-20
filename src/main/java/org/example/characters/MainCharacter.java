@@ -6,9 +6,10 @@ public abstract class MainCharacter {
     private String name;
     private String classType;
     private int level;
+    private String armorTypeAccepted;
+    private String gold;
+
     protected int baseDamage;
-
-
     protected int maxHP;
     private int currentHP;
     protected int crit;
@@ -19,7 +20,7 @@ public abstract class MainCharacter {
 
 
 
-public MainCharacter(String name, String classType, int maxHP, int baseDamage, int crit, int regen){
+public MainCharacter(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
     setName(name);
     setClassType(classType);
     setLevel(1);
@@ -28,6 +29,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     setCrit(crit);
     setRegen(regen);
     setBaseDamage(baseDamage);
+    setArmorTypeAccepted(armorTypeAccepted);
+    setGold(gold);
 }
 
 
@@ -66,8 +69,6 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         this.maxHP = maxHP;
     }
     public abstract void setMaxHP();
-
-
 
     public int getCurrentHP() {
         return currentHP;
@@ -110,6 +111,22 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         this.baseDamage = baseDamage;
     }
     public abstract void setBaseDamage();
+
+    public String getArmorTypeAccepted() {
+        return armorTypeAccepted;
+    }
+
+    public void setArmorTypeAccepted(String armorTypeAccepted) {
+        this.armorTypeAccepted = armorTypeAccepted;
+    }
+
+    public String getGold() {
+        return gold;
+    }
+
+    public void setGold(String gold) {
+        this.gold = gold;
+    }
 
     //Display
     public void displayInventory(){

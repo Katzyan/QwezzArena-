@@ -10,8 +10,8 @@ public class Worlock extends MainCharacter{
      * Base Crit 10% -> +2% per level
      *
      */
-    public Worlock(String name, String classType, int maxHP, int baseDamage, int crit, int regen){
-        super(name, classType, maxHP, baseDamage, crit, regen);
+    public Worlock(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
+        super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
 
     }
 

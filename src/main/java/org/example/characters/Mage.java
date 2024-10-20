@@ -10,8 +10,8 @@ public class Mage extends MainCharacter{
      * Base Crit 35% -> +4% per level
      *
      */
-    public Mage(String name, String classType, int maxHP, int baseDamage, int crit, int regen){
-        super(name, classType, maxHP, baseDamage, crit, regen);
+    public Mage(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
+        super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
 
     }
 

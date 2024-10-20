@@ -14,8 +14,8 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
 
 
 
-    public Warrior(String name, String classType, int maxHP, int baseDamage, int crit, int regen){
-        super(name, classType, maxHP, baseDamage, crit, regen);
+    public Warrior(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
+        super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
     }
 
     @Override
