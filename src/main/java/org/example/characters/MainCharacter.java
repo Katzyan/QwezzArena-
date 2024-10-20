@@ -6,6 +6,8 @@ public abstract class MainCharacter {
     private String name;
     private String classType;
     private int level;
+    private int baseDamage;
+
 
     private int maxHP;
     private int currentHP;
@@ -17,7 +19,7 @@ public abstract class MainCharacter {
 
 
 
-public MainCharacter(String name, String classType, int maxHP, int crit, int regen){
+public MainCharacter(String name, String classType, int maxHP, int baseDamage, int crit, int regen){
     setName(name);
     setClassType(classType);
     setLevel(1);
@@ -25,6 +27,7 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     setCurrentHP();
     setCrit(crit);
     setRegen(regen);
+    setBaseDamage(baseDamage);
 }
 
 
@@ -62,9 +65,9 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     public void setMaxHP(int maxHP) {
         this.maxHP = maxHP;
     }
-    public void setMaxHP(){
-    this.maxHP = this.maxHP + (getLevel()*5);
-    }
+    public abstract void setMaxHP();
+
+
 
     public int getCurrentHP() {
         return currentHP;
@@ -81,9 +84,7 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     public void setCrit(int crit) {
         this.crit = crit;
     }
-    public void setCrit(){
-    this.crit = this.crit + (getLevel()*1);
-    }
+    public abstract void setCrit();
 
     public int getRegen() {
         return regen;
@@ -101,6 +102,14 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
         return equipped;
     }
 
+    public int getBaseDamage() {
+        return baseDamage;
+    }
+
+    public void setBaseDamage(int baseDamage) {
+        this.baseDamage = baseDamage;
+    }
+    public abstract void setBaseDamage();
 
     //Display
     public void displayInventory(){
@@ -172,6 +181,7 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
         System.out.println("Name: " + getName());
         System.out.println("Level: " + getLevel()  + " " + getClassType());
         System.out.println("HP: " + getCurrentHP() + "/" + getMaxHP());
+        System.out.println("Base Damage " + getBaseDamage());
         System.out.println("Crit chance: " + getCrit() + "%");
         System.out.println("-------------------");
         displayEquipped();
@@ -191,6 +201,7 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     setMaxHP();
     setCurrentHP();
     setCrit();
+    setBaseDamage();
 
     }
 

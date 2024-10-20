@@ -36,21 +36,21 @@ public class Application {
 
                     switch (getOptionOneToFour()){
                         case 1:
-                             character1 = new Warrior(charName,"Warrior", 50, 5, 0 );
+                             character1 = new Warrior(charName,"Warrior", 50, 10,5, 0 );
                             System.out.println("New Warrior created successfully\n-------------------------------------------");
                             break;
 
                         case 2:
-                            character1 = new Rogue(charName,"Rogue", 30, 35, 0 );
+                            character1 = new Rogue(charName,"Rogue", 30, 15, 35, 0 );
                             System.out.println("New Rogue created successfully\n-------------------------------------------");
                             break;
 
                         case 3:
-                            character1 = new Mage(charName,"Mage", 20, 35, 0 );
+                            character1 = new Mage(charName,"Mage", 20, 18, 35, 0 );
                             System.out.println("New Mage created successfully\n-------------------------------------------");
                             break;
                         case 4:
-                            character1 = new Worlock(charName,"Worlock", 35, 10, 0 );
+                            character1 = new Worlock(charName,"Worlock", 35, 12, 10, 0 );
                             System.out.println("New Worlock created successfully\n-------------------------------------------");
                             break;
 
