@@ -62,6 +62,9 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
     public void setMaxHP(int maxHP) {
         this.maxHP = maxHP;
     }
+    public void setMaxHP(){
+    this.maxHP = this.maxHP + (getLevel()*5);
+    }
 
     public int getCurrentHP() {
         return currentHP;
@@ -77,6 +80,9 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
 
     public void setCrit(int crit) {
         this.crit = crit;
+    }
+    public void setCrit(){
+    this.crit = this.crit + (getLevel()*1);
     }
 
     public int getRegen() {
@@ -178,9 +184,13 @@ public MainCharacter(String name, String classType, int maxHP, int crit, int reg
 
     public void levelUp(int levels){
     this.level = this.level + levels;
+    refreshChar();
     }
 
     public void refreshChar(){
+    setMaxHP();
+    setCurrentHP();
+    setCrit();
 
     }
 
