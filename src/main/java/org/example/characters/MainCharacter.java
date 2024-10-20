@@ -6,13 +6,13 @@ public abstract class MainCharacter {
     private String name;
     private String classType;
     private int level;
-    private int baseDamage;
+    protected int baseDamage;
 
 
-    private int maxHP;
+    protected int maxHP;
     private int currentHP;
-    private int crit;
-    private int regen;
+    protected int crit;
+    protected int regen;
 
     private Items[] inventory = new Items[7];
     private Items[] equipped = new Items [7];
