@@ -21,17 +21,29 @@ public class Rogue extends MainCharacter{
 
     @Override
     public void setMaxHP() {
-        this.maxHP = 30 + getLevel()*5;
+        if(getLevel() != 1){
+            this.maxHP = 30 + getLevel()*5;
+        } else {
+            this.maxHP = 30;
+        }
     }
 
     @Override
     public void setBaseDamage(){
-        this.baseDamage = 15 + getLevel()*3;
+        if(getLevel() != 1){
+            this.baseDamage = 15 + getLevel()*3;
+        } else {
+            this.baseDamage = 15;
+        }
     }
 
     @Override
     public void setCrit() {
-        this.crit = 35 + getLevel()*3;
+        if(getLevel() != 1){
+            this.crit = 35 + getLevel()*3;
+        } else {
+            this.crit = 35;
+        }
         if(getCrit() > 100){
             this.crit = 100;
         }

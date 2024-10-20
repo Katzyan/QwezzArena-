@@ -21,17 +21,32 @@ public class Mage extends MainCharacter{
 
     @Override
     public void setMaxHP() {
-        this.maxHP = 20 + getLevel()*4;
+        if(getLevel() < 1){
+            this.maxHP = 20 + getLevel()*4;
+        }else {
+            this.maxHP = 20;
+        }
+
     }
 
     @Override
     public void setBaseDamage(){
-        this.baseDamage = 18 + getLevel()*4;
+        if(getLevel() < 1){
+            this.baseDamage = 18 + getLevel()*4;
+        } else {
+            this.baseDamage = 18;
+        }
+
     }
 
     @Override
     public void setCrit() {
-        this.crit = 35 + getLevel()*4;
+        if(getLevel() < 1){
+            this.crit = 35 + getLevel()*4;
+        }else {
+            this.crit = 35 + getLevel()*4;
+        }
+
         if(getCrit() > 100){
             this.crit = 100;
         }

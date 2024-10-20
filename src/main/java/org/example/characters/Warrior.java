@@ -36,17 +36,30 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
 
     @Override
     public void setMaxHP() {
-        this.maxHP = 50 + getLevel()*10;
+        if(getLevel() != 1){
+            this.maxHP = 50 + getLevel()*10;
+        } else {
+            this.maxHP = 50;
+        }
     }
 
     @Override
     public void setBaseDamage(){
-        this.baseDamage = 10 + getLevel()*2;
+        if(getLevel() != 1) {
+            this.baseDamage = 10 + getLevel() * 2;
+        } else {
+            this.baseDamage = 10 + getLevel() * 2;
+        }
     }
 
     @Override
     public void setCrit() {
-        this.crit = 5 + getLevel();
+        if(getLevel() != 1){
+            this.crit = 5 + getLevel();
+        } else {
+            this.crit = 5;
+        }
+
         if (getCrit() > 100) {
             this.crit = 100;
         }

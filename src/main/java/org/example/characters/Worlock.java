@@ -21,17 +21,33 @@ public class Worlock extends MainCharacter{
 
     @Override
     public void setMaxHP() {
-        this.maxHP = 35 + getLevel()*8;
+        if(getLevel() < 1){
+            this.maxHP = 35 + getLevel()*8;
+        } else {
+            this.maxHP = 35;
+        }
+
     }
 
     @Override
     public void setBaseDamage(){
-        this.baseDamage = 12 + getLevel()*3;
+        if(getLevel() < 1){
+            this.baseDamage = 12 + getLevel()*3;
+        }else {
+            this.baseDamage = 12;
+        }
+
     }
 
     @Override
     public void setCrit() {
-        this.crit = 10 + getLevel()*2;
+        if(getLevel() < 1){
+            this.crit = 10 + getLevel()*2;
+         }else {
+            this.crit = 10 + getLevel()*2;
+        }
+
+
         if(getCrit() > 100){
             this.crit = 100;
         }
