@@ -53,8 +53,7 @@ public class Application {
                             character1 = new Worlock(charName,"Worlock", 35, 12, 10, 0, "Cloth", 50);
                             System.out.println("New Worlock created successfully\n-------------------------------------------");
                             break;
-
-
+                        default:
                     }
                     //leaving the first switch (from the logo menu)
                     break;
