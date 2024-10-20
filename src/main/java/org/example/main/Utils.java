@@ -1,6 +1,10 @@
-package org.example;
+package org.example.main;
+
+import java.util.Scanner;
 
 public class Utils {
+    static Scanner scannerInt = new Scanner(System.in);
+    static Scanner scannerString = new Scanner(System.in);
 
 
     public static void qalogo(){
@@ -30,10 +34,53 @@ public class Utils {
         System.out.println("                            3. Exit\n");
     }
 
-    public static void clearConsole(){
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+    public static void mainMenu(){
+        System.out.println("-------------------------------------------");
+        System.out.println("                        1. Character info");
+        System.out.println("                        2. Next fight ");
+        System.out.println("                        3. Shop");
+        System.out.println("                        4. Exit");
     }
+
+    public static void clearConsole(){
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+
+    public static int getOptionOneToFour(){
+        int option;
+       while(true){
+           try{
+               option = scannerInt.nextInt();
+               if(option < 1 || option > 4){
+                   continue;
+               }
+               break;
+           } catch (Throwable e){
+               scannerInt.next();
+           }
+       }
+        return option;
+    }
+
+    public static int getOptionOneToThree(){
+        int option;
+        while(true){
+            try{
+                option = scannerInt.nextInt();
+                if(option < 1 || option > 3){
+                    continue;
+                }
+                break;
+            } catch (Throwable e){
+                scannerInt.next();
+            }
+        }
+        return option;
+    }
+
+
 
 
     }
