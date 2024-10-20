@@ -1,5 +1,9 @@
 package org.example.characters;
 
+import org.example.items.ArmorType;
+import org.example.items.Items;
+import org.example.items.SlotType;
+
 public class Mage extends MainCharacter{
     /**
      * Magesdeal high magical damage but have very low HP.
@@ -30,6 +34,39 @@ public class Mage extends MainCharacter{
         this.crit = 35 + getLevel()*4;
         if(getCrit() > 100){
             this.crit = 100;
+        }
+    }
+
+    @Override
+    public void equipItem(Items item){
+        if(item.getArmorType() == ArmorType.CLOTH || item.getArmorType() == ArmorType.WEAPON || item.getArmorType() == ArmorType.RING || item.getArmorType() == ArmorType.CLOAK){
+            switch (item.getSlotType()){
+                case SlotType.HEAD:
+                    setEquipped(0, item);
+                    break;
+                case SlotType.CHEST:
+                    setEquipped(1, item);
+                    break;
+                case SlotType.LEGS:
+                    setEquipped(2, item);
+                    break;
+                case SlotType.CLOAK:
+                    setEquipped(3, item);
+                    break;
+                case SlotType.RING:
+                    setEquipped(4, item);
+                    break;
+                case SlotType.MAINHAND:
+                    setEquipped(5, item);
+                    break;
+                case SlotType.OFFHAND:
+                    setEquipped(6, item);
+                    break;
+                default:
+                    System.out.println("Unable to equip item");
+            }
+        }else {
+            System.out.println("Mages should wear cloth");
         }
     }
 }

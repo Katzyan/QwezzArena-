@@ -1,13 +1,14 @@
 package org.example.characters;
 
 import org.example.items.Items;
+import org.example.items.SlotType;
 
 public abstract class MainCharacter {
     private String name;
     private String classType;
     private int level;
     private String armorTypeAccepted;
-    private String gold;
+    private int gold;
 
     protected int baseDamage;
     protected int maxHP;
@@ -103,6 +104,12 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         return equipped;
     }
 
+    public void setEquipped(int i, Items item){
+        if((i >= 0 && i < 7) && item != null) {
+            this.equipped[i] = item;
+        }
+    }
+
     public int getBaseDamage() {
         return baseDamage;
     }
@@ -120,11 +127,11 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         this.armorTypeAccepted = armorTypeAccepted;
     }
 
-    public String getGold() {
+    public int getGold() {
         return gold;
     }
 
-    public void setGold(String gold) {
+    public void setGold(int gold) {
         this.gold = gold;
     }
 
@@ -143,8 +150,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     public void displayEquipped(){
         System.out.println("Equipped items:");
         if(equipped[0] != null){
-            System.out.println("Head Slot: " + equipped[0].getName());
-            System.out.println(equipped[0].getDescription());
+            System.out.println("Head Slot: " + equipped[0].getName() + " - " + equipped[0].getDescription() );
+
         } else {
             System.out.println("Head Slot: Empty");
         }
@@ -164,8 +171,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         }
 
         if(equipped[3] != null){
-            System.out.println("Cloak Slot: " + equipped[3].getName());
-            System.out.println(equipped[3].getDescription());
+            System.out.println("Cloak Slot: " + equipped[3].getName() + " - " + equipped[3].getDescription());
+
         } else {
             System.out.println("Cloak Slot: Empty");
         }
@@ -221,7 +228,10 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     setCurrentHP();
     setCrit();
     setBaseDamage();
-
     }
+
+    public abstract void equipItem(Items item);
+
+
 
 }
