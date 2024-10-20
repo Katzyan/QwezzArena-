@@ -20,7 +20,7 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
 
     public Warrior(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
         super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
-        Items noviceCape = new Items("Novice Cape", 3,"Novice cape is doesn`t do anythig.", 0, 0, 0, 20, ArmorType.CLOAK, SlotType.CLOAK);
+        Items noviceCape = new Items("Novice Cape","Novice cape is doesn`t do anythig.", 0, 0, 0, 20, ArmorType.CLOAK, SlotType.CLOAK);
         equipItem(noviceCape);
 
     }
@@ -48,25 +48,46 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
         if(item.getArmorType() == ArmorType.PLATE || item.getArmorType() == ArmorType.WEAPON || item.getArmorType() == ArmorType.RING || item.getArmorType() == ArmorType.CLOAK){
             switch (item.getSlotType()){
                 case SlotType.HEAD:
-                    setEquipped(0, item);
+                    if(isEquippedSlotEmpty(0)){
+                        setEquipped(0, item);
+                        break;
+                    }
                     break;
                 case SlotType.CHEST:
-                    setEquipped(1, item);
+                    if(isEquippedSlotEmpty(1)){
+                        setEquipped(1, item);
+                        break;
+                    }
                     break;
                 case SlotType.LEGS:
-                    setEquipped(2, item);
+                    if(isEquippedSlotEmpty(2)){
+                        setEquipped(2, item);
+                        break;
+                    }
                     break;
                 case SlotType.CLOAK:
-                    setEquipped(3, item);
+                    if(isEquippedSlotEmpty(3)){
+                        setEquipped(3, item);
+                        break;
+                    }
                     break;
                 case SlotType.RING:
-                    setEquipped(4, item);
+                    if(isEquippedSlotEmpty(4)){
+                        setEquipped(4, item);
+                        break;
+                    }
                     break;
                 case SlotType.MAINHAND:
-                    setEquipped(5, item);
+                    if(isEquippedSlotEmpty(5)){
+                        setEquipped(5, item);
+                        break;
+                    };
                     break;
                 case SlotType.OFFHAND:
-                    setEquipped(6, item);
+                    if(isEquippedSlotEmpty(6)){
+                        setEquipped(6, item);
+                        break;
+                    }
                     break;
                 default:
                     System.out.println("Unable to equip item");

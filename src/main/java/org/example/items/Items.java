@@ -13,11 +13,9 @@ public class Items {
 
 
     // 0 for Head, 1 for Chest, 2 for Legs, 3 for Cloak, 4 for Ring, 5 for Main Hand, 6 for OffHand
-    private int slotSpace;
 
-    public Items(String name, int slotSpace, String description, int hpModifier, int damageModifier, int critModifier, int buyValue, ArmorType armorType, SlotType slotType){
+    public Items(String name, String description, int hpModifier, int damageModifier, int critModifier, int buyValue, ArmorType armorType, SlotType slotType){
         setName(name);
-        setSlotSpace(slotSpace);
         setDescription(description);
         setHpModifier(hpModifier);
         setDamageModifier(damageModifier);
@@ -26,7 +24,6 @@ public class Items {
         setSellValue();
         setArmorType(armorType);
         setSlotType(slotType);
-
     }
 
 
@@ -56,16 +53,6 @@ public class Items {
 
     public void setCritModifier(int critModifier) {
         this.critModifier = critModifier;
-    }
-
-    public int getSlotSpace() {
-        return slotSpace;
-    }
-
-    public void setSlotSpace(int slotSpace) {
-        if(slotSpace > 0 && slotSpace < 7) {
-            this.slotSpace = slotSpace;
-        }
     }
 
     public int getHpModifier() {

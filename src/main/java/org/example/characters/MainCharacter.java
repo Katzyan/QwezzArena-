@@ -230,7 +230,16 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     setBaseDamage();
     }
 
+    public boolean isEquippedSlotEmpty(int slot){
+        if(this.equipped[slot] != null){
+            return true;
+        }
+        return false;
+    }
+
     public abstract void equipItem(Items item);
+
+
 
 
 
