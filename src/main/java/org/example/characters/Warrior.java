@@ -20,6 +20,7 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
 
     public Warrior(String name, String classType, int maxHP, int baseDamage, int crit, int regen, String armorTypeAccepted, int gold){
         super(name, classType, maxHP, baseDamage, crit, regen, armorTypeAccepted, gold);
+
        Items noveiceChestpiece = new Items("Novice Chestpiece", "Novice chestpiece don`t do nothing", 0, 0, 0, 20, ArmorType.PLATE, SlotType.CHEST);
        Items noviceCape = new Items("Novice Cape","Novice cape is doesn`t do anythig.", 0, 0, 0, 20, ArmorType.CLOAK, SlotType.CLOAK);
        Items noviceLeggings = new Items("Novice Leggings", "Novice leggings don`t do shit", 0, 0, 0, 20, ArmorType.PLATE, SlotType.LEGS);

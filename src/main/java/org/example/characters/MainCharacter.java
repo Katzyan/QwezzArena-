@@ -193,7 +193,6 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
         } else {
             System.out.println("Off Hand Slot: Empty\n-----------------------");
         }
-
     }
 
     public void charInfo(){
