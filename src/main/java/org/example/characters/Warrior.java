@@ -52,7 +52,7 @@ public class Warrior extends MainCharacter {
         if(getLevel() != 1) {
             this.baseDamage = 10 + getLevel() * 2;
         } else {
-            this.baseDamage = 10 + getLevel() * 2;
+            this.baseDamage = 10;
         }
     }
 

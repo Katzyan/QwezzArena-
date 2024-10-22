@@ -6,6 +6,12 @@ public class NPC {
     private int damage;
     private int critChance;
 
+    public NPC(String name, int hp, int damage, int critChance){
+        setName(name);
+        setHp(hp);
+        setDamage(damage);
+        setCritChance(critChance);
+    }
 
     public String getName() {
         return name;

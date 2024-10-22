@@ -1,5 +1,8 @@
 package org.example.main;
 
+import org.example.characters.MainCharacter;
+import org.example.npc.NPC;
+
 import java.util.Scanner;
 
 public class Utils {
@@ -78,6 +81,29 @@ public class Utils {
             }
         }
         return option;
+    }
+
+    public static void fight(MainCharacter character1, NPC npc1){
+
+
+
+        System.out.println("NPC " + npc1.getName() + " has joined the battle");
+
+        while(true) {
+            int round = 1;
+            System.out.println();
+            System.out.println("               Round " + round + "!");
+            System.out.println("--------------------------------");
+            System.out.println("         " + npc1.getName() + "     |      " + character1.getName());
+            System.out.println("       " + "HP: " + npc1.getHp() + "     |     " + "HP: " + character1.getCurrentHP() + "/" + character1.getMaxHP());
+            System.out.println("       " + "Damage: ??" + " |     " + "Damage: " + character1.getBaseDamage());
+            System.out.println("       " + "Crit: ??" + "   |     " + "Crit: " + character1.getCrit());
+
+            break;
+
+
+        }
+
     }
 
 
