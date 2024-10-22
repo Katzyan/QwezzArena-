@@ -108,6 +108,11 @@ public class Mage extends MainCharacter{
     }
 
     @Override
+    public void showAbilities() {
+
+    }
+
+    @Override
     public void lightAttack(NPC enemy) {
 
     }

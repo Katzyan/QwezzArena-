@@ -82,11 +82,23 @@ public class Utils {
         }
         return option;
     }
+    public static int getOptionOneToTwo(){
+        int option;
+        while(true){
+            try{
+                option = scannerInt.nextInt();
+                if(option < 1 || option > 2){
+                    continue;
+                }
+                break;
+            } catch (Throwable e){
+                scannerInt.next();
+            }
+        }
+        return option;
+    }
 
     public static void fight(MainCharacter character1, NPC npc1){
-
-
-
         System.out.println("NPC " + npc1.getName() + " has joined the battle");
 
         while(true) {
@@ -98,12 +110,22 @@ public class Utils {
             System.out.println("       " + "HP: " + npc1.getHp() + "     |     " + "HP: " + character1.getCurrentHP() + "/" + character1.getMaxHP());
             System.out.println("       " + "Damage: ??" + " |     " + "Damage: " + character1.getBaseDamage());
             System.out.println("       " + "Crit: ??" + "   |     " + "Crit: " + character1.getCrit());
+            character1.showAbilities();
+            switch (getOptionOneToTwo()){
+                case 1:
+                    character1.lightAttack(npc1);
+                    break;
+                case 2:
+                    character1.heavyAttack(npc1);
+                    break;
 
-            break;
-
-
+            }
+            if(npc1.getHp() <= 0){
+                System.out.println("Congrats. You have won the fight");
+                break;
+            }
+            //NPC sa te atace si el
         }
-
     }
 
 

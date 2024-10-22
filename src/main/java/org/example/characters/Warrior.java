@@ -125,6 +125,7 @@ public class Warrior extends MainCharacter {
     }
 
 
+
     // Abilities
 
     @Override
@@ -179,6 +180,32 @@ public class Warrior extends MainCharacter {
 
     @Override
     public void damageOverTime(NPC enemy){
+
+    }
+
+    @Override
+    public void showAbilities() {
+        if(this.getLevel() == 1){
+            System.out.println("1. Auto Attack - Swing at the target. No Cooldown");
+            System.out.println("2. Heroic Strike - Channel your inner rage for a big swing at the target. Cooldown 1 round");
+
+        }else if(this.getLevel() < 3){ // adica level 2
+            System.out.println("1. Auto Attack - Swing at the target. No Cooldown");
+            System.out.println("2. Heroic Strike - Channel your inner rage for a big swing at the target. Cooldown 1 round");
+            System.out.println("3. Rend - Slashes the target and makes them bleed over 2 rounds");
+        }else if(this.getLevel() < 4){ // adica level 3
+            System.out.println("1. Auto Attack - Swing at the target. No Cooldown");
+            System.out.println("2. Heroic Strike - Channel your inner rage for a big swing at the target. Cooldown 1 round");
+            System.out.println("3. Rend - Slashes the target and makes them bleed over 2 rounds");
+            System.out.println("4. Overpower - Swing at the target, dealing damage and healing for some amount");
+        }else if(this.getLevel() >= 5 ){ // adica levle 5 sau peste
+            System.out.println("1. Auto Attack - Swing at the target. No Cooldown");
+            System.out.println("2. Heroic Strike - Channel your inner rage for a big swing at the target. Cooldown 1 round");
+            System.out.println("3. Rend - Slashes the target and makes them bleed over 2 rounds");
+            System.out.println("4. Overpower - Swing at the target, dealing damage and healing for some amount");
+            System.out.println("5. ThunderBolt - Stuns the target for 1 round");
+        }
+
 
     }
 

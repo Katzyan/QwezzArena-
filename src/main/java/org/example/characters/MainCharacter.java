@@ -248,6 +248,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
 
     public abstract void equipItem(Items item);
 
+    public abstract void showAbilities();
+
 
 
 
