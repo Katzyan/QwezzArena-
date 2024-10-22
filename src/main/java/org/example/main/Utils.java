@@ -3,6 +3,8 @@ package org.example.main;
 import org.example.characters.MainCharacter;
 import org.example.npc.NPC;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Utils {
@@ -10,7 +12,7 @@ public class Utils {
     static Scanner scannerString = new Scanner(System.in);
 
 
-    public static void qalogo(){
+    public static void qalogo() {
         System.out.println("   _____ ");
         System.out.println("  /     \\     __          __     _____      ______      ______ ");
         System.out.println(" /       \\    \\ \\        / /    |  ___|    |___  /     |___  / ");
@@ -31,13 +33,13 @@ public class Utils {
 
     }
 
-    public static void initialMenu(){
+    public static void initialMenu() {
         System.out.println("                        1. Start New Game\n");
         System.out.println("                          2. Load Save\n");
         System.out.println("                            3. Exit\n");
     }
 
-    public static void mainMenu(){
+    public static void mainMenu() {
         System.out.println("-------------------------------------------");
         System.out.println("                        1. Character info");
         System.out.println("                        2. Next fight ");
@@ -45,63 +47,84 @@ public class Utils {
         System.out.println("                        4. Exit");
     }
 
-    public static void clearConsole(){
+    public static void clearConsole() {
         for (int i = 0; i < 50; i++) {
             System.out.println();
         }
     }
 
-    public static int getOptionOneToFour(){
+    public static int getOptionOneToFour() {
         int option;
-       while(true){
-           try{
-               option = scannerInt.nextInt();
-               if(option < 1 || option > 4){
-                   continue;
-               }
-               break;
-           } catch (Throwable e){
-               scannerInt.next();
-           }
-       }
-        return option;
-    }
-
-    public static int getOptionOneToThree(){
-        int option;
-        while(true){
-            try{
+        while (true) {
+            try {
                 option = scannerInt.nextInt();
-                if(option < 1 || option > 3){
+                if (option < 1 || option > 4) {
                     continue;
                 }
                 break;
-            } catch (Throwable e){
-                scannerInt.next();
-            }
-        }
-        return option;
-    }
-    public static int getOptionOneToTwo(){
-        int option;
-        while(true){
-            try{
-                option = scannerInt.nextInt();
-                if(option < 1 || option > 2){
-                    continue;
-                }
-                break;
-            } catch (Throwable e){
+            } catch (Throwable e) {
                 scannerInt.next();
             }
         }
         return option;
     }
 
-    public static void fight(MainCharacter character1, NPC npc1){
-        System.out.println("NPC " + npc1.getName() + " has joined the battle");
+    public static int getOptionOneToThree() {
+        int option;
+        while (true) {
+            try {
+                option = scannerInt.nextInt();
+                if (option < 1 || option > 3) {
+                    continue;
+                }
+                break;
+            } catch (Throwable e) {
+                scannerInt.next();
+            }
+        }
+        return option;
+    }
+
+
+    public static int getOptionOneToTwo() {
+        int option;
+        while (true) {
+            try {
+                option = scannerInt.nextInt();
+                if (option < 1 || option > 2) {
+                    continue;
+                }
+                break;
+            } catch (Throwable e) {
+                scannerInt.next();
+            }
+        }
+        return option;
+    }
+
+    public static int getOptionOneToFive() {
+        int option;
+        while (true) {
+            try {
+                option = scannerInt.nextInt();
+                if (option < 1 || option > 5) {
+                    continue;
+                }
+                break;
+            } catch (Throwable e) {
+                scannerInt.next();
+            }
+        }
+        return option;
+    }
+
+
+    public static void fight(MainCharacter character1, NPC npc1) {
+        List<String> tracker = new ArrayList<>();
+        tracker.add("Filler");
+        System.out.println(npc1.getName() + " has joined the battle");
         int round = 1;
-        while(true) {
+        while (true) {
 
             System.out.println();
             System.out.println("               Round " + round + "!");
@@ -111,26 +134,55 @@ public class Utils {
             System.out.println("       " + "Damage: ??" + " |     " + "Damage: " + character1.getBaseDamage());
             System.out.println("       " + "Crit: ??" + "   |     " + "Crit: " + character1.getCrit());
             character1.showAbilities();
-            switch (getOptionOneToTwo()){
-                case 1:
-                    character1.lightAttack(npc1);
-                    break;
-                case 2:
-                    character1.heavyAttack(npc1);
-                    break;
-
+            while (true) {
+                switch (getOptionOneToFive()) {
+                    case 1:
+                        character1.lightAttack(npc1);
+                        tracker.add("Light");
+                        break;
+                    case 2:
+                        if (tracker.get(round - 1).equals("Heavy")) {
+                            System.out.println("Ability is on cooldown for this round. Use a different ability");
+                            continue;
+                        }
+                        character1.heavyAttack(npc1);
+                        tracker.add("Heavy");
+                        break;
+                    case 3:
+                        if (character1.getLevel() < 2) {
+                            break;
+                        }
+                        character1.damageOverTime(npc1);
+                        tracker.add("DOT");
+                        break;
+                    case 4:
+                        if (character1.getLevel() < 3) {
+                            break;
+                        }
+                        character1.sustainAttack(npc1);
+                        tracker.add("Sustain");
+                        break;
+                    case 5:
+                        if (character1.getLevel() < 5) {
+                            break;
+                        }
+                        character1.crowdControl(npc1);
+                        tracker.add("CC");
+                        break;
+                }
+                round++;
+                break;
             }
-            round++;
-            if(npc1.getHp() <= 0){
+            if (npc1.getHp() <= 0) {
                 System.out.println("Congrats. You have won the fight");
                 break;
             }
             //NPC sa te atace si el
+
         }
-    }
-
-
-
 
     }
+
+
+}
 

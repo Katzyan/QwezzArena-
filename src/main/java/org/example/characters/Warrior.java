@@ -146,7 +146,7 @@ public class Warrior extends MainCharacter {
 
     @Override
     public void lightAttack(NPC enemy){
-        System.out.println("You perform a light attack on" + enemy.getName());
+        System.out.println("You perform a light attack on " + enemy.getName());
         if(isCrit(super.getCrit())){
             System.out.println("Critical HIT. You deal " + super.baseDamage * 2 + " damage" );
             enemy.takeDamage(super.baseDamage * 2);
@@ -158,7 +158,7 @@ public class Warrior extends MainCharacter {
 
     @Override
     public void heavyAttack(NPC enemy){
-        System.out.println("You perform a heavy attack on" + enemy.getName());
+        System.out.println("You perform a heavy attack on " + enemy.getName());
         if(isCrit(super.getCrit())){
             System.out.println("Critical HIT. You deal " + (super.baseDamage + super.baseDamage/2) * 2 + " damage" );
             enemy.takeDamage((super.baseDamage + super.baseDamage/2) * 2);
