@@ -100,9 +100,9 @@ public class Utils {
 
     public static void fight(MainCharacter character1, NPC npc1){
         System.out.println("NPC " + npc1.getName() + " has joined the battle");
-
+        int round = 1;
         while(true) {
-            int round = 1;
+
             System.out.println();
             System.out.println("               Round " + round + "!");
             System.out.println("--------------------------------");
@@ -120,6 +120,7 @@ public class Utils {
                     break;
 
             }
+            round++;
             if(npc1.getHp() <= 0){
                 System.out.println("Congrats. You have won the fight");
                 break;
