@@ -250,6 +250,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
 
     public abstract void showAbilities();
 
+    public abstract void takeDamage();
+
 
 
 

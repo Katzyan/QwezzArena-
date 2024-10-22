@@ -113,6 +113,11 @@ public class Mage extends MainCharacter{
     }
 
     @Override
+    public void takeDamage() {
+
+    }
+
+    @Override
     public void lightAttack(NPC enemy) {
 
     }

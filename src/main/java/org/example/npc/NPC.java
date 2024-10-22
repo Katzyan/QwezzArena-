@@ -49,4 +49,8 @@ public class NPC {
     public void takeDamage(int damage){
         this.hp -= damage;
     }
+
+
+
+
 }

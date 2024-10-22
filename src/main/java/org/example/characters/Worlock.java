@@ -142,4 +142,9 @@ public class Worlock extends MainCharacter{
     public boolean isCrit(int critChance) {
         return false;
     }
+
+    @Override
+    public void takeDamage() {
+
+    }
 }

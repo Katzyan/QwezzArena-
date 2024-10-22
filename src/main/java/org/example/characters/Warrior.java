@@ -209,6 +209,11 @@ public class Warrior extends MainCharacter {
 
     }
 
+    @Override
+    public void takeDamage() {
+
+    }
+
 
 
 
