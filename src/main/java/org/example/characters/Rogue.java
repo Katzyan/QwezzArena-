@@ -140,7 +140,7 @@ public class Rogue extends MainCharacter{
     }
 
     @Override
-    public void takeDamage() {
+    public void takeDamage(int value) {
 
     }
 }

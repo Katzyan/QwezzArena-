@@ -210,8 +210,8 @@ public class Warrior extends MainCharacter {
     }
 
     @Override
-    public void takeDamage() {
-
+    public void takeDamage(int value) {
+        setCurrentHP(value);
     }
 
 

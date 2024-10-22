@@ -78,6 +78,9 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
     public void setCurrentHP() {
         this.currentHP = this.maxHP;
     }
+    public void setCurrentHP(int value){
+        this.currentHP -= value;
+    }
 
     public int getCrit() {
         return crit;
@@ -250,7 +253,7 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
 
     public abstract void showAbilities();
 
-    public abstract void takeDamage();
+    public abstract void takeDamage(int value);
 
 
 

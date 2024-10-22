@@ -178,6 +178,13 @@ public class Utils {
                 break;
             }
             //NPC sa te atace si el
+            System.out.println(npc1.getName() + " attacks you for " + npc1.getDamage() + " damage.");
+            character1.takeDamage(npc1.getDamage());
+            if(character1.getCurrentHP() <= 0){
+                System.out.println("You died.");
+                System.out.println("Game Over");
+                System.exit(0);
+            }
 
         }
 

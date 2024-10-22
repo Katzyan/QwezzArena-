@@ -144,7 +144,7 @@ public class Worlock extends MainCharacter{
     }
 
     @Override
-    public void takeDamage() {
+    public void takeDamage(int value) {
 
     }
 }

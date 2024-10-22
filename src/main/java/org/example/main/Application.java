@@ -83,7 +83,7 @@ public class Application {
                         System.out.println("Generating enemy");
                         switch (character1.getLevel()){
                             case 1:
-                                NPC npc1 = new NPC("NPC1", 30, 1, 0);
+                                NPC npc1 = new NPC("NPC1", 30, 30, 0);
                                 fight(character1, npc1);
                                 break;
                             case 2:
