@@ -3,8 +3,11 @@ package org.example.characters;
 import org.example.items.ArmorType;
 import org.example.items.Items;
 import org.example.items.SlotType;
+import org.example.npc.NPC;
 
-public class Warrior extends MainCharacter implements WarriorAbilities{
+import java.util.Random;
+
+public class Warrior extends MainCharacter {
 
     /**
      * Warriors are balanced in terms of HP and damage.
@@ -120,6 +123,68 @@ public class Warrior extends MainCharacter implements WarriorAbilities{
         }
         refreshChar();
     }
+
+
+    // Abilities
+
+    @Override
+    public boolean isCrit(int critChance){
+        if(critChance == 0){
+            return false;
+        }
+        if(critChance >= 100){
+           return true;
+       }
+        Random random = new Random();
+        int rolledValue = random.nextInt(100) + 1;
+        if(rolledValue <= critChance){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void lightAttack(NPC enemy){
+        System.out.println("You perform a light attack on" + enemy.getName());
+        if(isCrit(super.getCrit())){
+            System.out.println("Critical HIT. You deal " + super.baseDamage * 2 + " damage" );
+            enemy.takeDamage(super.baseDamage * 2);
+        }else {
+            System.out.println("You deal " + super.baseDamage + " damage");
+            enemy.takeDamage(super.baseDamage);
+        }
+    }
+
+    @Override
+    public void heavyAttack(NPC enemy){
+        System.out.println("You perform a heavy attack on" + enemy.getName());
+        if(isCrit(super.getCrit())){
+            System.out.println("Critical HIT. You deal " + (super.baseDamage + super.baseDamage/2) * 2 + " damage" );
+            enemy.takeDamage((super.baseDamage + super.baseDamage/2) * 2);
+        }else {
+            System.out.println("You deal " + (super.baseDamage + super.baseDamage/2) + " damage");
+            enemy.takeDamage(super.baseDamage + super.baseDamage/2);
+        }
+    }
+
+    @Override
+    public void sustainAttack(NPC enemy){
+
+    }
+
+    @Override
+    public void crowdControl(NPC enemy){
+
+    }
+
+    @Override
+    public void damageOverTime(NPC enemy){
+
+    }
+
+
+
+
 
 
 }

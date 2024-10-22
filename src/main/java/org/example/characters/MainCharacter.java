@@ -3,7 +3,7 @@ package org.example.characters;
 import org.example.items.Items;
 import org.example.items.SlotType;
 
-public abstract class MainCharacter {
+public abstract class MainCharacter implements Abilities {
     private String name;
     private String classType;
     private int level;
@@ -247,6 +247,8 @@ public MainCharacter(String name, String classType, int maxHP, int baseDamage, i
 
 
     public abstract void equipItem(Items item);
+
+
 
 
 

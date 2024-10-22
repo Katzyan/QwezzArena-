@@ -3,6 +3,7 @@ package org.example.characters;
 import org.example.items.ArmorType;
 import org.example.items.Items;
 import org.example.items.SlotType;
+import org.example.npc.NPC;
 
 public class Mage extends MainCharacter{
     /**
@@ -104,5 +105,35 @@ public class Mage extends MainCharacter{
         }else {
             System.out.println("Mages should wear cloth");
         }
+    }
+
+    @Override
+    public void lightAttack(NPC enemy) {
+
+    }
+
+    @Override
+    public void heavyAttack(NPC enemy) {
+
+    }
+
+    @Override
+    public void sustainAttack(NPC enemy) {
+
+    }
+
+    @Override
+    public void crowdControl(NPC enemy) {
+
+    }
+
+    @Override
+    public void damageOverTime(NPC enemy) {
+
+    }
+
+    @Override
+    public boolean isCrit(int critChance) {
+        return false;
     }
 }
